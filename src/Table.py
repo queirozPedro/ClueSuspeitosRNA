@@ -1,4 +1,4 @@
-from scene import *
+from Scene import *
 
 def gerar_string_tabela(tabela):
 

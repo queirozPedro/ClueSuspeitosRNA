@@ -1,4 +1,4 @@
-from table import *
+from Table import *
 import numpy as np
 
 '''
