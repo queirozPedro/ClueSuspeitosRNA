@@ -5,9 +5,9 @@ from matplotlib_venn import venn3, venn3_circles
 from matplotlib import pyplot as plt
 from matplotlib_venn.layout.venn3 import DefaultLayoutAlgorithm
 
-from scene import *
+from Scene import *
 from save_to_file import *
-from table import *
+from Table import *
 
 def gerar_dados(dados, chance):
     '''
@@ -353,8 +353,24 @@ def treinar_100_vezes():
             marco += intervalo_analise
 
 
-def main(): 
-    treinar_uma_vez()
+def main():
+    opcoes = {
+        "1": ("Treinar uma vez", treinar_uma_vez),
+        "2": ("Treinar 100 vezes", treinar_100_vezes),
+        "3": ("Gerar tabelas TXT", gerar_tabelas_txt),
+        "4": ("Gerar tabelas LaTeX", gerar_tabelas_tex),
+    }
+
+    print("\n=== Clue Suspeitos RNA ===")
+    for chave, (nome, _) in opcoes.items():
+        print(f"{chave}. {nome}")
+
+    escolha = input("\nEscolha uma opção: ").strip()
+
+    if escolha in opcoes:
+        opcoes[escolha][1]()
+    else:
+        print("Opção inválida.")
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,5 @@
-from scene import *
+from Scene import *
+from Table import *
 
 def gerar_tabelas_txt():
     '''
